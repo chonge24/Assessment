@@ -9,12 +9,12 @@ print("After you complete your quiz, I will tell you how many questions you answ
 print("You can choose to do the quiz again or exit.")
 name = input("Enter your name:")
 age = int(input("Enter your age:"))
-if age > 11:
-    sys.exit(f"Sorry, {name}, you are too old for this program")
-elif age < 5:
-    sys.exit(f"Sorry, {name}, you are too young for this program.")
-else:
+while type(age) != int:
+    age = int(input("Please enter your age"))
+if 5 <= age <= 11:
     continuation = input(f"Hi there, {name}, ready to learn some Māori? Enter 'Y' to continue or 'N' to Exit:").upper()
+else:
+    sys.exit(f"Sorry, {name} you are not of primary school age.")
 while continuation == 'N':
     quit("Goodbye")
 if continuation == 'Y':

@@ -11,4 +11,4 @@ elif age < 5:
 elif 5 < age < 11:
     print(f"Hi there, {name}, ready to learn some Māori?")
 else:
-    age = int(input("Invalid input. Please enter your age:"))
+    age = input("Invalid input. Please enter your age:")
