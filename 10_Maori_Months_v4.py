@@ -21,7 +21,7 @@ def maori_months_quiz(_quiz_score):
     while question_amount < 12:
 
         # Asking user the question.
-        user_answer = input(f"What is '{maori_months[question_amount][0]}' in English: ").lower()
+        user_answer = input(f"What is the maori word '{maori_months[question_amount][0]}' in English: ").lower()
 
         # Checking if the user got the question right, or wrong.
         if user_answer == maori_months[question_amount][1]:

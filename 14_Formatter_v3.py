@@ -12,8 +12,8 @@ def formatter(symbol, text):
 
 # main routine
 # for all of these, Show the symbol that wants to format, Then the sentence that they want
-print(formatter("*", "Welcome to the maori language quiz game"))
+print(formatter("*", "test 1"))
 print()
-print(formatter("!", "Lets Go"))
+print(formatter("!", "test 2"))
 print()
-print(formatter("-", "Thanks for playing"))
+print(formatter("-", "test 3"))

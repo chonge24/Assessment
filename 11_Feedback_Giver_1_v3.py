@@ -1,6 +1,6 @@
-# Putting together 11_Feedback and 11_Feedback_v2 together for a fully functioning Feedback Giver
+# Putting together 11_Feedback and 11_Feedback_Giver_1_v2 together for a fully functioning Feedback Giver
 import random
-score = random.randint(1,12)
+score = random.randint(1, 12)
 print(score)
 if score <= 3:
     print("You did not do very well.\n"

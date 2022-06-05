@@ -1,6 +1,6 @@
-'''Creating lists of the possible quiz answers as well as asking which quiz they would like to take
-Changes made from version 1 to remove the accents on the quiz answers as it is difficult for some computers to type them
-Removed numerous print statements to make it a singular print '''
+# Creating lists of the possible quiz answers as well as asking which quiz they would like to take
+# Changes made from version 1 to remove the accents on the quiz answers as it is difficult for some computers to type them
+# Removed numerous print statements to make it a singular print
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 maori_numbers = ["tahi", "rua", "toru", "whā", "rima", "ono", "whitu", "waru", "iwa", "tekau"]
 days = ["monday", "tuesday", "thursday", "wednesday", "friday", "saturday", "sunday"]

@@ -3,12 +3,12 @@
 name = "Joe"
 
 # Asking if they want to continue
-continuation = input(f"Hi there, {name}, ready to learn some Māori? Enter 'Y' to continue or 'X' to Exit:").upper()
+continuation = input(f"Hi there, {name}, ready to learn some Māori? Enter 'y' to continue or 'x' to Exit:").lower()
 
 # If they enter 'X', exit program.
-if continuation == 'X':
+if continuation == 'x':
     quit("goodbye")
 # If they enter 'Y', continue program
-elif continuation == 'Y':
+elif continuation == 'y':
     print("Let's start the quiz!")
  

@@ -1,5 +1,5 @@
 symbol = "*"
-text = "Welcome to the maori language quiz game"
+text = "test"
 sides = symbol * 3
 
 formatted_text = f"{sides} {text} {sides}"

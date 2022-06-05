@@ -1,5 +1,20 @@
-# Putting everything together
-# This code is based on 04_Quiz_Details_v3
+# Added 'n' input to the function so there is a way to exit the function without quitting program.
+def yes_no():
+    yesno = input(f"Would you like to see the answer sheet?\n"
+                  "Enter 'Y' to see, 'N' to not see, or 'X' to Exit:").upper()
+
+    # Used a while loop for when the answer is not 'Y'.
+    while yesno != 'Y':
+
+        # If they enter 'X', quit program.
+        if yesno == 'X':
+            quit("Goodbye")
+
+        elif yesno == 'N':
+            continue
+        else:
+            yesno = input("Invalid input. Enter 'Y' to continue or 'N' to exit:").upper()
+    answer_sheet()
 
 
 def answer_sheet():
@@ -15,7 +30,8 @@ def answer_sheet():
               "Enter '4' for Days in Māori to days\n"
               "Enter '5' for Months to months in Māori\n"
               "Enter '6' for Months in Māori to months\n"
-              "Enter 'x' to quit")
+              "Enter 'x' to quit\n"
+              "Enter 'n' when you finish looking")
         answers = input("Choose one of the options above and press enter: ").lower()
 
         # If they enter '1', print the answer sheet for Numbers to numbers in Māori
@@ -60,14 +76,13 @@ def answer_sheet():
         # If they enter 'x', exit program, saying "goodbye"
         elif answers == 'x':
             quit("goodbye")
+
+        # When they finish looking at the answers, they press 'n', leading onto the next part of program
+        elif answers == 'n':
+            print()
+
         # If the user enters an invalid answer, output 'Please enter a valid answer'
         else:
             print("Invalid input.\n"
                   "Please enter an option from below.")
             answers = 0
-
-
-# main routine
-play = 'y'
-if play == 'y':
-    answer_sheet()

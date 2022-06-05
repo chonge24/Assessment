@@ -19,7 +19,7 @@ def maori_days_quiz(_quiz_score):
     while question_number < 7:
 
         # Asking user the question.
-        user_answer = input(f"What is '{maori_days[question_number][0]}' in English: ").lower()
+        user_answer = input(f"What is the maori word '{maori_days[question_number][0]}' in English: ").lower()
 
         # Checking if the user got the question right, or wrong.
         if user_answer == maori_days[question_number][1]:

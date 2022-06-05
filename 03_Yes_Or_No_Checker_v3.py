@@ -4,16 +4,16 @@ name = "Emmanuel"
 
 # Asking if they want to continue
 continuation = input(f"Hi there, {name}, ready to learn some Māori?\n"
-                     "Enter 'Y' to continue or 'X' to Exit:").upper()
+                     "Enter 'Y' to continue or 'X' to Exit:").lower()
 
-# Used a while loop for when the answer is not 'Y'.
-while continuation != 'Y':
+# Used a while loop for when the answer is not 'y'.
+while continuation != 'y':
 
     # If they enter 'X', quit program.
-    if continuation == 'X':
+    if continuation == 'x':
         quit("Goodbye")
 
     # If they enter an invalid input, ask them to enter again.
     else:
-        continuation = input("Invalid input. Enter 'Y' to continue or 'X' to exit:").upper()
+        continuation = input("Invalid input. Enter 'y' to continue or 'x' to exit:").lower()
 print("Let's start the quiz!")

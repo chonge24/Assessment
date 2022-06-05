@@ -1,5 +1,5 @@
-''' making sure the input for 'quiz_chooser' does the expected output. Will put the other stuff from other components
-together with this component in final program.'''
+# making sure the input for 'quiz_chooser' does the expected output. Will put the other stuff from other components
+# together with this component in final program.
 # Made 04_Quiz_Details_v2 into function
 
 
