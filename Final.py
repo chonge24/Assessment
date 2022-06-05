@@ -1,26 +1,17 @@
-import sys
 import random
 
 
-def yes_no(question_text):
-    while True:
-
-        # Ask the user if the have played before
-        answer = input(question_text).upper()
-
-        # If they say yes, output 'Program Continues'
-        if answer == "Y" or answer == "YES":
-            answer = "Yes"
-            return answer
-
-        # If they say no, output 'Display Instructions'
-        elif answer == "N" or answer == "NO":
-            answer = "No"
+def yes_no():
+    yesno = input(f"Would you like to see the answer sheet?\n"
+                  "Enter 'Y' to see, 'N' to not see, or 'X' to Exit:").upper()
+    while yesno != 'N':
+        if yesno == 'X':
             quit("Goodbye")
 
-        # Otherwise - show error
+        elif yesno == 'Y':
+            answer_sheet()
         else:
-            print("Invalid input. Enter 'Y' to continue or 'N' to exit")
+            yesno = input("Invalid input. Enter 'Y' to see, 'N' to not see, or 'X' to Exit:").upper()
 
 
 def quiz_chooser():
@@ -35,52 +26,58 @@ def quiz_chooser():
               "Enter '5' for Months to months in Māori\n"
               "Enter '6' for Months in Māori to months\n"
               "Enter 'x' to quit")
-        choose_quiz = input("Choose one of the options above and press enter: ")
+        choose_quiz = input("Choose one of the options above and press enter: ").lower()
 
         if choose_quiz == '1':
             score = 0
             total_score = numbers_quiz(score)
             print(f"Your total score was {total_score}/10")
+            score_percent = total_score / 10
             print()
-            feedback_giver(total_score)
+            feedback_giver(score_percent)
 
         elif choose_quiz == '2':
             score = 0
             total_score = maori_numbers_quiz(score)
             print(f"Your total score was {total_score}/10")
+            score_percent = total_score / 10
             print()
-            feedback_giver(total_score)
+            feedback_giver(score_percent)
 
         elif choose_quiz == '3':
             score = 0
             total_score = days_quiz(score)
             print(f"Your total score was {total_score}/7")
+            score_percent = total_score / 7
             print()
-            feedback_giver(total_score)
+            feedback_giver(score_percent)
 
         elif choose_quiz == '4':
             score = 0
             total_score = maori_days_quiz(score)
             print(f"Your total score was {total_score}/7")
+            score_percent = total_score / 7
             print()
-            feedback_giver(total_score)
+            feedback_giver(score_percent)
 
         elif choose_quiz == '5':
             score = 0
             total_score = months_quiz(score)
             print(f"Your total score was {total_score}/12")
+            score_percent = total_score / 12
             print()
-            feedback_giver(total_score)
+            feedback_giver(score_percent)
 
         elif choose_quiz == '6':
             score = 0
             total_score = maori_months_quiz(score)
             print(f"Your total score was {total_score}/12")
+            score_percent = total_score / 12
             print()
-            feedback_giver(total_score)
+            feedback_giver(score_percent)
 
         elif choose_quiz == 'x':
-            quit("goodbye")
+            quit(formatter("~", "goodbye"))
         # If the user enters an invalid answer, output 'Please enter a valid answer'
         else:
             print("Invalid input.\n"
@@ -109,9 +106,9 @@ def numbers_quiz(_quiz_score):
         # Checking if the user got the question right, or wrong.
         if user_answer == numbers[question_number][1]:
             player_score += 1
-            print("you are correct")
+            print(formatter("+", "You are correct"))
         else:
-            print("You are incorrect")
+            print(formatter("!", "You are incorrect"))
 
         # Increasing the question number by 1 every time the while loop 'loops'.
         question_number += 1
@@ -139,9 +136,9 @@ def maori_numbers_quiz(_quiz_score):
         # Checking if the user got the question right, or wrong.
         if user_answer == maori_numbers[question_number][1]:
             player_score += 1
-            print("you are correct")
+            print(formatter("+", "You are correct"))
         else:
-            print("You are incorrect")
+            print(formatter("!", "You are incorrect"))
 
         # Increasing the question number by 1 every time the while loop 'loops'.
         question_number += 1
@@ -169,9 +166,9 @@ def days_quiz(_quiz_score):
         # Checking if the user got the question right, or wrong.
         if user_answer == days[question_number][1]:
             player_score += 1
-            print("you are correct")
+            print(formatter("+", "You are correct"))
         else:
-            print("You are incorrect")
+            print(formatter("!", "You are incorrect"))
 
         # Increasing the question number by 1 every time the while loop 'loops'.
         question_number += 1
@@ -199,9 +196,9 @@ def maori_days_quiz(_quiz_score):
         # Checking if the user got the question right, or wrong.
         if user_answer == maori_days[question_number][1]:
             player_score += 1
-            print("you are correct")
+            print(formatter("+", "You are correct"))
         else:
-            print("You are incorrect")
+            print(formatter("!", "You are incorrect"))
 
         # Increasing the question number by 1 every time the while loop 'loops'.
         question_number += 1
@@ -230,9 +227,9 @@ def months_quiz(_quiz_score):
         # Checking if the user got the question right, or wrong.
         if user_answer == months[question_amount][1]:
             player_score += 1
-            print("you are correct")
+            print(formatter("+", "You are correct"))
         else:
-            print("You are incorrect")
+            print(formatter("!", "You are incorrect"))
 
         # Increasing the question number by 1 every time the while loop 'loops'.
         question_amount += 1
@@ -262,25 +259,121 @@ def maori_months_quiz(_quiz_score):
         # Checking if the user got the question right, or wrong.
         if user_answer == maori_months[question_amount][1]:
             player_score += 1
-            print("you are correct")
+            print(formatter("+", "You are correct"))
         else:
-            print("You are incorrect")
+            print(formatter("!", "You are incorrect"))
 
         # Increasing the question number by 1 every time the while loop 'loops'.
         question_amount += 1
     return player_score
 
 
-def feedback_giver(score):
-    if score <= 3:
-        print("You did not do very well.\n"
-              "Look at the Answer sheet")
-    elif 4 <= score <= 7:
-        print("You did well\n"
-              "Look at the answers and try aim for 8 or more")
+def feedback_giver(score_percent):
+    if score_percent <= 0.4:
+        print("Unlucky, you got less than 40% correct.\n"
+              "Try looking at the answer sheet to help.\n"
+              "")
+
+    elif 0.401 <= score_percent <= 0.7:
+        print(f"Well done! Your score was {score_percent *100}%\n"
+              f"Look at the Answer sheet and try beat your score!")
+
+    elif score_percent == 1:
+        print("Well done! You scored 100%")
+
     else:
-        print("You scored more than 8!\n"
-              "Good Job!")
+        print(f"Great Job! You scored {score_percent * 100}%!\n"
+              "Play again and try beat your score!\n"
+              "")
+
+
+def quiz_again(question_text):
+    while True:
+
+        # Ask the user if the have played before
+        answer = input(question_text).upper()
+
+        # If they say yes, output 'Program Continues'
+        if answer == "Y":
+            return answer
+
+        # If they say no, output 'Display Instructions'
+        elif answer == "X":
+            quit("Goodbye")
+
+        # Otherwise - show error
+        else:
+            print("Invalid input. Enter 'Y' to continue or 'N' to exit")
+
+
+def answer_sheet():
+    answers = 0
+    while answers == 0:
+        # Ask the user if they want to continue to the quiz.
+        print("This is the answer sheet.\n"
+              "This is the question and answer [question, answer]\n"
+              "e.g, [Monday, Rahina]\n"
+              "Enter '1' for Numbers to numbers in Māori\n"
+              "Enter '2' for Numbers in Māori to numbers\n"
+              "Enter '3' for Days to days in Māori\n"
+              "Enter '4' for Days in Māori to days\n"
+              "Enter '5' for Months to months in Māori\n"
+              "Enter '6' for Months in Māori to months\n"
+              "Enter 'x' to quit")
+        answers = input("Choose one of the options above and press enter: ")
+
+        if answers == '1':
+            print([['1', "tahi"], ['2', "rua"], ['3', "toru"], ['4', "wha"], ['5', "rima"], ['6', "ono"],
+                   ['7', "whitu"], ['8', "waru"], ['9', "iwa"], ['10', "tekau"]])
+            break
+
+        elif answers == '2':
+            print([["tahi", '1'], ["rua", '2'], ["toru", '3'], ["wha", '4'], ["rima", '5'], ["ono", '6'],
+                   ["whitu", '7'], ["waru", '8'], ["iwa", '9'], ["tekau", '10']])
+            break
+
+        elif answers == '3':
+            print([["monday", "rahina"], ["tuesday", "ratu"], ["wednesday", "raapa"], ["thursday", "rapare"],
+                   ["friday", "ramere"], ["saturday", "rahoroi"], ["sunday", "ratapu"]])
+            break
+
+        elif answers == '4':
+            print([["rahina", "monday"], ["ratu", "tuesday"], ["raapa", "wednesday"], ["rapare", "thursday"],
+                   ["ramere", "friday"], ["rahoroi", "saturday"], ["ratapu", "sunday"]])
+            break
+
+        elif answers == '5':
+            print([["january", "kohitatea"], ["february", "hui-tanguru"], ["march", "poutute-rangi"],
+                   ["april", "paenga-whawha"], ["may", "haratua"], ["june", "pipiri"], ["july", "hongongoi"],
+                   ["august", "here-turi-koka"], ["september", "mahuru"], ["october", "whiringa-a-nuku"],
+                   ["november", "whiringa-a-rangi"], ["december", "hakihea"]])
+            break
+
+        elif answers == '6':
+            print([["kohitatea", "january"], ["hui-tanguru", "february"], ["poutute-rangi", "march"],
+                   ["paenga-whawha", "april"], ["haratua", "may"], ["pipiri", "june"], ["hongongoi", "july"],
+                   ["here-turi-koka", "august"], ["mahuru", "september"], ["whiringa-a-nuku", "october"],
+                   ["whiringa-a-rangi", "november"], ["hakihea", "december"]])
+            break
+
+        elif answers == 'x':
+            quit("goodbye")
+        # If the user enters an invalid answer, output 'Please enter a valid answer'
+        else:
+            print("Invalid input.\n"
+                  "Please enter an option from below.")
+            answers = 0
+
+
+def formatter(symbol, text):
+    # The symbol has 3 of it on either side
+    sides = symbol * 3
+    # it is the 3 on either side with text in the middle
+    formatted_text = f"{sides} {text} {sides}"
+    # The top and bottom are the symbol repeated
+    top_bottom = symbol * len(formatted_text)
+    # goes back with three rows
+    return f"{top_bottom}\n{formatted_text}\n{top_bottom}"
 
 # Main routine
 
@@ -292,15 +385,49 @@ print("Welcome to Emmanuel's Māori Quiz\n"
       "You can choose for the question answer to be in number/English or Māori.\n"
       "You can choose how many questions there are.\n"
       "After you complete your quiz, I will tell you how many questions you answered correctly and how you can practice.\n"
-      "You can choose to do the quiz again or exit.\n")
-name = input("Enter your name:")
-age = input("Enter your age:")
-while type(age) != int:
-    age = int(input("Invalid input. Please enter your age:"))
-if 5 <= age <= 11:
-      print("You are of Primary school age.")
-else:
-    sys.exit(f"Sorry, {name} you are not of primary school age.")
-continuation = yes_no("Do you want to continue?\n"
-                      "Enter 'Y' to Continue or 'N' to exit.")
+      "You can choose to do the quiz again or exit.\n"
+      "")
+name = input("Please enter your name:")
+valid = False
+while not valid:
+    try:
+        # Ask user for their name and age
+        age = int(input("Please enter your age:"))
+
+        # If they are too young, exit program
+        if age < 5:
+            quit("Sorry, you are too young.")
+
+        # If they are too old, exit program
+        elif age > 11:
+            quit("Sorry, you are too old.")
+
+        # If they are old enough, continue
+        else:
+            valid = True
+
+    except ValueError:
+        print("You did not enter your age\n")
+continuation = input(f"Hi there, {name}, ready to learn some Māori?\n"
+                     "Enter 'Y' to continue or 'X' to Exit:\n"
+                     "").upper()
+while continuation != 'Y':
+    if continuation == 'X':
+        quit("Goodbye")
+    else:
+        continuation = input("Invalid input. Enter 'Y' to continue or 'N' to exit:").upper()
+print("Let's start the quiz!")
 quiz_chooser()
+yes_no()
+play_again = input(f"You have your quiz, {name}!\n"
+                   "Want to try the same quiz or a new one?\n"
+                   "'Y' to continue or 'X' to exit:").lower()
+while play_again != "x":
+    if play_again == "y":
+        quiz_chooser()
+        yes_no()
+    else:
+        print("Invalid input.")
+    play_again = input("Enter 'Y' to continue or 'X' to exit:").lower()
+    print()
+quit(formatter("~", "Goodbye"))

@@ -24,7 +24,7 @@ def maori_numbers_quiz(_quiz_score):
         # Checking if the user got the question right, or wrong.
         if user_answer == maori_numbers[question_number][1]:
             player_score += 1
-            print("you are correct")
+            print("You are correct")
         else:
             print("You are incorrect")
 
