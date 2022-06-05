@@ -128,8 +128,9 @@ def numbers_quiz(_quiz_score):
     while question_number < 10:
 
         # Asking user the question.
-        user_answer = input(f"What is the number\n"
-                            f"'{numbers[question_number][0]}' in Maori: ").lower()
+        user_answer = input(f"What is the number"
+                            f" '{numbers[question_number][0]}'"
+                            f" in Maori:").lower()
 
         # Checking if the user got the question right, or wrong.
         if user_answer == numbers[question_number][1]:
@@ -151,7 +152,8 @@ def maori_numbers_quiz(_quiz_score):
     # List of numbers in Maori
     maori_numbers = [["tahi", '1'], ["rua", '2'], ["toru", '3'],
                      ["wha", '4'], ["rima", '5'], ["ono", '6'],
-                     ["whitu", '7'], ["waru", '8'], ["iwa", '9'], ["tekau", '10']]
+                     ["whitu", '7'], ["waru", '8'],
+                     ["iwa", '9'], ["tekau", '10']]
 
     # Shuffling the list in a random order
     random.shuffle(maori_numbers)
@@ -160,7 +162,9 @@ def maori_numbers_quiz(_quiz_score):
     while question_number < 10:
 
         # Asking user the question.
-        user_answer = input(f"What is maori word" f"'{maori_numbers[question_number][0]}' in numbers: ")
+        user_answer = input(f"What is maori word "
+                            f"'{maori_numbers[question_number][0]}'"
+                            f" in numbers: ")
 
         # Checking if the user got the question right, or wrong.
         if user_answer == maori_numbers[question_number][1]:
@@ -169,7 +173,7 @@ def maori_numbers_quiz(_quiz_score):
         else:
             print(formatter("!", "You are incorrect"))
 
-        # Increasing the question number by 1 every time the while loop 'loops'.
+        # Increasing the question number by 1 each loop
         question_number += 1
     return player_score
 
@@ -180,8 +184,9 @@ def days_quiz(_quiz_score):
     question_number = 0
 
     # List of days
-    days = [["monday", "rahina"], ["tuesday", "ratu"], ["wednesday", "raapa"], ["thursday", "rapare"],
-            ["friday", "ramere"], ["saturday", "rahoroi"], ["sunday", "ratapu"]]
+    days = [["monday", "rahina"], ["tuesday", "ratu"], ["wednesday", "raapa"],
+            ["thursday", "rapare"], ["friday", "ramere"],
+            ["saturday", "rahoroi"], ["sunday", "ratapu"]]
 
     # Shuffling the list in a random order
     random.shuffle(days)
@@ -190,7 +195,9 @@ def days_quiz(_quiz_score):
     while question_number < 7:
 
         # Asking user the question.
-        user_answer = input(f"What is '{days[question_number][0]}' in Maori: ").lower()
+        user_answer = input(f"What is "
+                            f"'{days[question_number][0]}'"
+                            f" in Maori: ").lower()
 
         # Checking if the user got the question right, or wrong.
         if user_answer == days[question_number][1]:
@@ -199,7 +206,7 @@ def days_quiz(_quiz_score):
         else:
             print(formatter("!", "You are incorrect"))
 
-        # Increasing the question number by 1 every time the while loop 'loops'.
+        # Increasing the question number by 1 each loop
         question_number += 1
     return player_score
 
@@ -210,8 +217,10 @@ def maori_days_quiz(_quiz_score):
     question_number = 0
 
     # List of maori days
-    maori_days = [["rahina", "monday"], ["ratu", "tuesday"], ["raapa", "wednesday"], ["rapare", "thursday"],
-                  ["ramere", "friday"], ["rahoroi", "saturday"], ["ratapu", "sunday"]]
+    maori_days = [["rahina", "monday"], ["ratu", "tuesday"],
+                  ["raapa", "wednesday"], ["rapare", "thursday"],
+                  ["ramere", "friday"],
+                  ["rahoroi", "saturday"], ["ratapu", "sunday"]]
 
     # Shuffling the list in a random order
     random.shuffle(maori_days)
@@ -220,7 +229,9 @@ def maori_days_quiz(_quiz_score):
     while question_number < 7:
 
         # Asking user the question.
-        user_answer = input(f"What is '{maori_days[question_number][0]}' in English: ").lower()
+        user_answer = input(f"What is "
+                            f"'{maori_days[question_number][0]}'"
+                            f" in English: ").lower()
 
         # Checking if the user got the question right, or wrong.
         if user_answer == maori_days[question_number][1]:
@@ -229,7 +240,7 @@ def maori_days_quiz(_quiz_score):
         else:
             print(formatter("!", "You are incorrect"))
 
-        # Increasing the question number by 1 every time the while loop 'loops'.
+        # Increasing the question number by 1 each loop
         question_number += 1
     return player_score
 
@@ -240,9 +251,12 @@ def months_quiz(_quiz_score):
     question_amount = 0
 
     # List of months
-    months = [["january", "kohitatea"], ["february", "hui-tanguru"], ["march", "poutute-rangi"], ["april", "paenga-whawha"],
-              ["may", "haratua"], ["june", "pipiri"], ["july", "hongongoi"], ["august", "here-turi-koka"],
-              ["september", "mahuru"], ["october", "whiringa-a-nuku"], ["november", "whiringa-a-rangi"], ["december", "hakihea"]]
+    months = [["january", "kohitatea"], ["february", "hui-tanguru"],
+              ["march", "poutute-rangi"], ["april", "paenga-whawha"],
+              ["may", "haratua"], ["june", "pipiri"], ["july", "hongongoi"],
+              ["august", "here-turi-koka"], ["september", "mahuru"],
+              ["october", "whiringa-a-nuku"], ["november", "whiringa-a-rangi"],
+              ["december", "hakihea"]]
 
     # Shuffling the list in a random order
     random.shuffle(months)
@@ -251,7 +265,9 @@ def months_quiz(_quiz_score):
     while question_amount < 12:
 
         # Asking user the question.
-        user_answer = input(f"What is '{months[question_amount][0]}' in Maori: ").lower()
+        user_answer = input(f"What is "
+                            f"'{months[question_amount][0]}'"
+                            f" in Maori: ").lower()
 
         # Checking if the user got the question right, or wrong.
         if user_answer == months[question_amount][1]:
@@ -260,7 +276,7 @@ def months_quiz(_quiz_score):
         else:
             print(formatter("!", "You are incorrect"))
 
-        # Increasing the question number by 1 every time the while loop 'loops'.
+        # Increasing the question number by 1 each loop
         question_amount += 1
     return player_score
 
@@ -271,9 +287,12 @@ def maori_months_quiz(_quiz_score):
     question_amount = 0
 
     # List of months in Maori
-    maori_months = [["kohitatea", "january"], ["hui-tanguru", "february"], ["poutute-rangi", "march"],
-                    ["paenga-whawha", "april"], ["haratua", "may"], ["pipiri", "june"], ["hongongoi", "july"],
-                    ["here-turi-koka", "august"], ["mahuru", "september"], ["whiringa-a-nuku", "october"],
+    maori_months = [["kohitatea", "january"], ["hui-tanguru", "february"],
+                    ["poutute-rangi", "march"], ["paenga-whawha", "april"],
+                    ["haratua", "may"], ["pipiri", "june"],
+                    ["hongongoi", "july"],
+                    ["here-turi-koka", "august"], ["mahuru", "september"],
+                    ["whiringa-a-nuku", "october"],
                     ["whiringa-a-rangi", "november"], ["hakihea", "december"]]
 
     # Shuffling the list in a random order
@@ -283,7 +302,9 @@ def maori_months_quiz(_quiz_score):
     while question_amount < 12:
 
         # Asking user the question.
-        user_answer = input(f"What is '{maori_months[question_amount][0]}' in English: ").lower()
+        user_answer = input(f"What is "
+                            f"'{maori_months[question_amount][0]}'"
+                            f" in English: ").lower()
 
         # Checking if the user got the question right, or wrong.
         if user_answer == maori_months[question_amount][1]:
@@ -292,30 +313,32 @@ def maori_months_quiz(_quiz_score):
         else:
             print(formatter("!", "You are incorrect"))
 
-        # Increasing the question number by 1 every time the while loop 'loops'.
+        # Increasing the question number by 1 each loop
         question_amount += 1
     return player_score
 
 
 def feedback_giver(score_percent):
 
-    # If they score less than 40%, give them feedback and suggest to look at the answer sheet
+    # If they score less than 40%, suggest them to look at the answer sheet
     if score_percent <= 0.4:
         print("Unlucky, you got less than 40% correct.\n"
               "Try looking at the answer sheet to help.\n"
               "")
 
-    # If they score between 40.1% and 70%, give them feedback and encourage them to try beat their score
+    # If they score between 40.1% and 70%,
+    # give them feedback and encourage them to try beat their score
     elif 0.401 <= score_percent <= 0.7:
         print(f"Well done! Your score was {score_percent *100}%\n"
               f"Look at the Answer sheet and try beat your score!")
 
-    # If they score 100%, say they're amazing and suggest them to do another quiz.
+    # If they score 100%, say they're amazing. Suggest them to do another quiz
     elif score_percent == 1:
         print("You're amazing! You scored 100%\n"
               "Try playing another quiz")
 
-    # If they score between 70.1% and 99.99%, give them feedback and encourage to try beat their score
+    # If they score between 70.1% and 99.99%,
+    # give them feedback and encourage to try beat their score
     else:
         print(f"Great Job! You scored {score_percent * 100}%!\n"
               "Play again and try beat your score!\n"
@@ -358,56 +381,76 @@ def answer_sheet():
               "Enter '6' for Months in Māori to months\n"
               "Enter 'x' to quit\n"
               "Enter 'n' when you finish looking")
-        answers = input("Choose one of the options above and press enter: ").lower()
+        answers = input("Enter an option from above ").lower()
 
-        # If they enter '1', print the answer sheet for Numbers to numbers in Māori
+        # If they enter '1',
+        # print the answer sheet for Numbers to numbers in Māori
         if answers == '1':
-            print([['1', "tahi"], ['2', "rua"], ['3', "toru"], ['4', "wha"], ['5', "rima"], ['6', "ono"],
-                   ['7', "whitu"], ['8', "waru"], ['9', "iwa"], ['10', "tekau"]])
+            print([['1', "tahi"], ['2', "rua"], ['3', "toru"],
+                   ['4', "wha"], ['5', "rima"], ['6', "ono"],
+                   ['7', "whitu"], ['8', "waru"],
+                   ['9', "iwa"], ['10', "tekau"]])
             break
 
-        # If they enter '2', print the answer sheet for Numbers in Māori to numbers
+        # If they enter '2',
+        # print the answer sheet for Numbers in Māori to numbers
         elif answers == '2':
-            print([["tahi", '1'], ["rua", '2'], ["toru", '3'], ["wha", '4'], ["rima", '5'], ["ono", '6'],
-                   ["whitu", '7'], ["waru", '8'], ["iwa", '9'], ["tekau", '10']])
+            print([["tahi", '1'], ["rua", '2'], ["toru", '3'],
+                   ["wha", '4'], ["rima", '5'], ["ono", '6'],
+                   ["whitu", '7'], ["waru", '8'],
+                   ["iwa", '9'], ["tekau", '10']])
             break
 
-        # If they enter '3', print the answer sheet for Days to days in Māori
+        # If they enter '3',
+        # print the answer sheet for Days to days in Māori
         elif answers == '3':
-            print([["monday", "rahina"], ["tuesday", "ratu"], ["wednesday", "raapa"], ["thursday", "rapare"],
-                   ["friday", "ramere"], ["saturday", "rahoroi"], ["sunday", "ratapu"]])
+            print([["monday", "rahina"], ["tuesday", "ratu"],
+                   ["wednesday", "raapa"], ["thursday", "rapare"],
+                   ["friday", "ramere"], ["saturday", "rahoroi"],
+                   ["sunday", "ratapu"]])
             break
 
-        # If they enter '4', print the answer sheet for Days in Māori to days
+        # If they enter '4',
+        # print the answer sheet for Days in Māori to days
         elif answers == '4':
-            print([["rahina", "monday"], ["ratu", "tuesday"], ["raapa", "wednesday"], ["rapare", "thursday"],
-                   ["ramere", "friday"], ["rahoroi", "saturday"], ["ratapu", "sunday"]])
+            print([["rahina", "monday"], ["ratu", "tuesday"],
+                   ["raapa", "wednesday"], ["rapare", "thursday"],
+                   ["ramere", "friday"], ["rahoroi", "saturday"],
+                   ["ratapu", "sunday"]])
             break
 
-        # If they enter '5', print the answer sheet for Months to months in Māori
+        # If they enter '5',
+        # print the answer sheet for Months to months in Māori
         elif answers == '5':
-            print([["january", "kohitatea"], ["february", "hui-tanguru"], ["march", "poutute-rangi"],
-                   ["april", "paenga-whawha"], ["may", "haratua"], ["june", "pipiri"], ["july", "hongongoi"],
-                   ["august", "here-turi-koka"], ["september", "mahuru"], ["october", "whiringa-a-nuku"],
+            print([["january", "kohitatea"], ["february", "hui-tanguru"],
+                   ["march", "poutute-rangi"], ["april", "paenga-whawha"],
+                   ["may", "haratua"], ["june", "pipiri"],
+                   ["july", "hongongoi"], ["august", "here-turi-koka"],
+                   ["september", "mahuru"], ["october", "whiringa-a-nuku"],
                    ["november", "whiringa-a-rangi"], ["december", "hakihea"]])
             break
 
-        # If they enter '6', print the answer sheet for Months in Māori to months
+        # If they enter '6',
+        # print the answer sheet for Months in Māori to months
         elif answers == '6':
-            print([["kohitatea", "january"], ["hui-tanguru", "february"], ["poutute-rangi", "march"],
-                   ["paenga-whawha", "april"], ["haratua", "may"], ["pipiri", "june"], ["hongongoi", "july"],
-                   ["here-turi-koka", "august"], ["mahuru", "september"], ["whiringa-a-nuku", "october"],
+            print([["kohitatea", "january"], ["hui-tanguru", "february"],
+                   ["poutute-rangi", "march"], ["paenga-whawha", "april"],
+                   ["haratua", "may"], ["pipiri", "june"],
+                   ["hongongoi", "july"], ["here-turi-koka", "august"],
+                   ["mahuru", "september"], ["whiringa-a-nuku", "october"],
                    ["whiringa-a-rangi", "november"], ["hakihea", "december"]])
             break
         # If they enter 'x', exit program, saying "goodbye"
         elif answers == 'x':
             quit("goodbye")
 
-        # When they finish looking at the answers, they press 'n', leading onto the next part of program
+        # When they finish looking at the answers, they press 'n',
+        # leading onto the next part of program
         elif answers == 'n':
             print()
 
-        # If the user enters an invalid answer, output 'Please enter a valid answer'
+        # If the user enters an invalid answer,
+        # output 'Please enter a valid answer'
         else:
             print("Invalid input.\n"
                   "Please enter an option from below.")
@@ -429,11 +472,12 @@ def formatter(symbol, text):
 
 # Print welcome messages
 print("Welcome to Emmanuel's Māori Quiz\n"
-      "The purpose of this program is to help primary school children learn Māori.\n"
+      "The program tries to help primary school children learn Māori.\n"
       "I hope you learn many things here!\n"
       "There will be quizzes about numbers, days, or months!\n"
-      "You can choose for the question answer to be in number/English or Māori.\n"
-      "After you complete your quiz, I will tell you how many questions you answered correctly and how you can practice.\n"
+      "Choose the question answer to be in number/English or Māori.\n"
+      "After you complete your quiz, I will tell you how many questions"
+      " you answered correctly and how you can practice.\n"
       "You can choose to do the quiz again or exit.\n"
       "")
 
@@ -472,9 +516,11 @@ while continuation != 'Y':
     if continuation == 'X':
         quit(formatter("~", "Goodbye"))
 
-    # If they do not enter 'Y' or 'X", tell them invalid input and ask them to enter again.
+    # If they do not enter 'Y' or 'X",
+    # tell them invalid input and ask them to enter again.
     else:
-        continuation = input("Invalid input. Enter 'Y' to continue or 'N' to exit:").upper()
+        continuation = input("Invalid input. "
+                             "Enter 'Y' to continue or 'N' to exit:").upper()
 print(formatter("-", "Let's start the quiz!"))
 quiz_chooser()
 yes_no()
@@ -492,10 +538,12 @@ while play_again != "x":
         quiz_chooser()
         yes_no()
 
-    # If they do not enter 'x' or 'y', say invalid input and ask them to enter again.
+    # If they do not enter 'x' or 'y',
+    # say invalid input and ask them to enter again.
     else:
         print("Invalid input.")
-    play_again = input("You have finished a quiz! Enter 'Y' to continue or 'X' to exit:").lower()
+    play_again = input("You have finished a quiz!"
+                       " Enter 'Y' to continue or 'X' to exit:").lower()
     print()
 print("Thanks for playing Emmanuel's Māori Quiz!\n"
       "I hope you learned many things!")
